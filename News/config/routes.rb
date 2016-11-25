@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
 	#delete "categories/" =>"categories#show", as: "delete_category"
 	resources :categories
+	resources :posts
 end

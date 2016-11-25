@@ -1,0 +1,61 @@
+<h1>Edit</h1>
+	<%= form_for(@post) do |f| %>
+	<% if @post.errors.any? %>
+		<section id="errors">
+			<header>
+				<h2>Oops! your form could not be saved</h2>
+				<h3>Please correct the following
+					<%= pluralize(@post.errors.count,"error")%>
+				</h3>	
+			</header>
+			<ul>
+			<% @post.errors.full_messages.each do |message| %>
+				<li><%=message%></li>
+			<% end %>	
+			</ul>	
+		</section>
+	<% end %>	
+
+	<P>
+		<%= f.label :title %><br/>
+		<div style="color:black">
+			<%= f.text_field :title %>
+		</div>	
+	</p>
+	<P>
+
+		<%= f.label :description %><br/>
+		<div style="color:black">
+			<%= f.text_area :description %>
+		</div>	
+	</p>
+	<P>
+		<%= f.label :image_file_name %><br/>
+		<div style="color:black">
+			<%= f.text_field :image_file_name %>
+		</div>	
+	</p>
+	<p>
+		<%= f.label :date%>
+		<div style="color:black;display:inline-block">
+			<%= f.datetime_select :date %>
+		</div>
+	</p>
+	<P>
+		<%= f.label :publish %><br/>
+		<div style="color:black">
+			<%= f.text_field :publish %>
+		</div>	
+	</p>
+	<P>
+		<%= f.label :category %><br/>
+		<div style="color:black">
+			<%= f.text_field :category_id %>
+		</div>	
+	</p>	
+	<div style="color:black">
+		<%= f.submit %>
+	</div>	
+	</p>	
+<% end %>
+
