@@ -1,20 +1,4 @@
-<div class="top-bar" style="background: #FFF;">
-      <div class="top-bar-left">
-        <ul class="menu" style="background: #FFF;">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Contact Me</a></li>
-          <li><a href="#">News</a></li>
-        </ul>
-      </div>
 
-      <div class="top-bar-right">
-          <ul class="menu" style="background: #FFF;">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button type="button" class="button">Search</button></li>
-        </ul>
-      </div>
-    </div>
 
     <div class="large-12 columns" style="background:#6842f4;height: 100px;">
       <p></p>
@@ -27,12 +11,10 @@
 
     <div class="top-bar" id="main-menu">
       <ul class="menu vertical medium-horizontal expanded medium-text-center" data-responsive-menu="drilldown medium-dropdown">
-        <li class="has-submenu"><a href="#">Tech</a></li>
-        <li class="has-submenu"><a href="#">Energy</a></li>
-        <li class="has-submenu"><a href="#">Space</a></li>
-        <li class="has-submenu"><a href="#">Medicine</a></li>
-        <li class="has-submenu"><a href="#">Robotics</a></li>
-        <li class="has-submenu"><a href="#">Tesla</a></li>
+        <% @cates.each do |cate|%>
+        <li class="has-submenu"><%= link_to cate.cate_name, category_path(cate.id) %> </li>
+        <% end %>
+
       </ul>
     </div>
     <br>
