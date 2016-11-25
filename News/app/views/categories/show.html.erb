@@ -1,0 +1,10 @@
+
+	<table border="1">
+		<tr>
+			<td><%= @category.id %></td>
+			<td><%= @category.cate_name %></td>
+			<td><%= link_to "Edit", edit_category_path(@category.id) %></td>
+			<td><%= link_to "Delete",category_path(@category.id),method: :delete, data: {confirm: "Do you want to delete?"} %> </td>
+		</tr>
+	</table>			
+</div>

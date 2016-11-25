@@ -1,0 +1,30 @@
+<h1>Edit</h1>
+	<%= form_for(@category) do |f| %>
+	<% if @category.errors.any? %>
+		<section id="errors">
+			<header>
+				<h2>Oops! your form could not be saved</h2>
+				<h3>Please correct the following
+					<%= pluralize(@category.errors.count,"error")%>
+				</h3>	
+			</header>
+			<ul>
+			<% @category.errors.full_messages.each do |message| %>
+				<li><%=message%></li>
+			<% end %>	
+			</ul>	
+		</section>
+	<% end %>	
+
+	<P>
+		<%= f.label :category %><br/>
+		<div style="color:black">
+			<%= f.text_field :cate_name %>
+		</div>	
+	</p>
+	<div style="color:black">
+		<%= f.submit %>
+	</div>	
+	</p>	
+<% end %>
+

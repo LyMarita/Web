@@ -1,0 +1,11 @@
+<%= link_to "New category",new_category_path %>
+<% @show_category.each do |category| %>
+	<table border="1">
+		<tr>
+			<td><%= category.id %></td>
+			<td><%= category.cate_name %></td>
+			<td><%= link_to "show", category_path(category.id) %></td>
+		</tr>
+	</table>			
+</div>
+<% end %> 
