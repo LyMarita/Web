@@ -1,4 +1,4 @@
-<h1>Edit</h1>
+<h1>Add New Post</h1>
 	<%= form_for(@post) do |f| %>
 	<% if @post.errors.any? %>
 		<section id="errors">
@@ -44,6 +44,18 @@
 		<%= f.label :publish %><br/>
 		<div style="color:black">
 			<%= f.text_field :publish %>
+		</div>	
+	</p>
+	<P>
+		<%= f.label :user_id %><br/>
+		<div style="color:black">
+			<%= f.text_field :user_id %>
+		</div>	
+	</p>
+	<P>
+		<%= f.label :category_id %><br/>
+		<div style="color:black">
+			<%= f.text_field :category_id %>
 		</div>	
 	</p>	
 	<div style="color:black">

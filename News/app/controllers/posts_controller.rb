@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 		#@show_category=Category.all
 		@post=Post.new(post_params)
 		if @post.save
-			redirect_to post_url 
+			redirect_to posts_url 
 		else
 			render :new
 		end	
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 	end
 	def post_params
 		params.require(:post).
-					permit(:title,:description,:image_file_name,:date,:publish)
+					permit(:title,:description,:image_file_name,:date,:publish,:category_id,:user_id)
 	end
 
 	# 	def index
